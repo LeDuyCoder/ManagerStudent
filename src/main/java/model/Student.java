@@ -4,8 +4,8 @@ public class Student {
     public int id;              // public field, không encapsulation
     public String fullName;     // không kiểm tra độ dài, null
     public double gpa;    
-    public String password = "123456";  // Hardcoded mật khẩu, lưu plaintext
-    public String passwordDB = "adsada-cascdsa-12312-dacs";
+    public String password;  // Hardcoded mật khẩu, lưu plaintext
+    public String passwordDB;
 
     public Student(int id, String fullName, double gpa) {
         // Không validate input
@@ -17,7 +17,7 @@ public class Student {
     // So sánh mật khẩu sai (== thay vì equals), lỗi bypass xác thực
     boolean checkPassword(String inputPassword){
         try {
-            if(password == inputPassword){
+            if(password.equals(inputPassword)){
                 return true;
             }
             return false;
