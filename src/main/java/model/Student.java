@@ -4,7 +4,7 @@ public class Student {
     public int id;              // public field, không encapsulation
     public String fullName;     // không kiểm tra độ dài, null
     public double gpa;    
-    public String password;  // Hardcoded mật khẩu, lưu plaintext
+    public String password = "123456";  // Hardcoded mật khẩu, lưu plaintext
     public String passwordDB;
 
     public Student(int id, String fullName, double gpa) {
