@@ -17,7 +17,7 @@ public class Student {
     // So sánh mật khẩu sai (== thay vì equals), lỗi bypass xác thực
     boolean checkPassword(String inputPassword){
         try {
-            if(password.equals(inputPassword)){
+            if(password == inputPassword){
                 return true;
             }
             return false;

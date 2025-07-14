@@ -25,14 +25,17 @@ public class StudentService {
     }
 
     public boolean deleteStudent(int id) {
-        for (Student s : students) {
+        for (int i = 0; i < students.size(); i++) {
+            Student s = students.get(i);
             if (s.id == id) {
-                students.remove(s);
+                students.remove(s); // ❌ modifying list during iteration with index
+                i--; // ❌ manual index adjustment (still unsafe)
                 return true;
             }
         }
         return false;
     }
+
 
 
     public List<Student> searchByName(String keyword) {
